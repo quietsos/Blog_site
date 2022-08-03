@@ -34,10 +34,14 @@ def home(request):
 def contact(request):
     # return HttpResponse("This is contact page!")
 
-    name = request.GET.get('name')
-    email = request.GET.get('email')
-    query = request.GET.get('comments')
+    # name = request.GET.get('name')
+    # email = request.GET.get('email')
+    # query = request.GET.get('comments')
 
+
+    name = request.POST.get('name')
+    email = request.POST.get('email')
+    query = request.POST.get('comments')
     # print(name)
     # print(email)
     # print(query)
