@@ -2,16 +2,31 @@ from gzip import READ
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
+
+from .models import MySkill
+
+
+
+
+
+
 
 def home(request):
+
+    item = MySkill.objects.all()
+
     # return HttpResponse("This is home page!")
     title = 'Welcome to Quietsos'
     desc =  'What is IoT? The Internet of Things (IoT) describes the network of physical objects—“things”—that are embedded with sensors, software, and other technologies for the purpose of connecting and exchanging data with other devices and systems over the internet.'
     
-    
-    
-    return render(request,'index.html',{ 'title':title, 'description':desc})
+    context = {
+        'title':title,
+        'description':desc,
+        'data': item,
+
+    }
+      
+    return render(request,'index.html',context)
 
 
 

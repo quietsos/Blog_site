@@ -8,6 +8,11 @@ class MySkill(models.Model):
     desc = models.TextField(max_length=500, blank=False)
     datetime = models.DateTimeField()
 
+
+
+    def summary(self):
+        return self.desc[0:100]
+
     def __str__(self):
         return self.title
 
