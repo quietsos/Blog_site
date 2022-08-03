@@ -16,3 +16,14 @@ class MySkill(models.Model):
     def __str__(self):
         return self.title
 
+
+class Contactinfo(models.Model):
+    cname = models.CharField(max_length=50)
+    cemail = models.EmailField(max_length=50)
+    cquery = models.TextField(max_length=1000)
+
+    
+
+    def __str__(self):
+        return self.cname
+        

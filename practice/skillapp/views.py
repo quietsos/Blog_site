@@ -5,6 +5,7 @@ from django.http import HttpResponse
 
 
 from .models import MySkill
+from .models import Contactinfo
 
 
 
@@ -37,18 +38,26 @@ def contact(request):
     # name = request.GET.get('name')
     # email = request.GET.get('email')
     # query = request.GET.get('comments')
+    # print(f" name:{name} \n Email: {email} \n Query: {query} \n")
 
+    if request.method == 'POST':
 
-    name = request.POST.get('name')
-    email = request.POST.get('email')
-    query = request.POST.get('comments')
-    # print(name)
-    # print(email)
-    # print(query)
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        query = request.POST.get('comments')
+        # print(name)
+        # print(email)
+        # print(query)
+        # print(f" name:{name} \n Email: {email} \n Query: {query} \n")
 
-    print(f" name:{name} \n Email: {email} \n Query: {query} \n")
+        # mydata = Contactinfo(cname = name, cemail = email, cquery = query)
+        mydata = Contactinfo()
+        mydata.cname = name 
+        mydata.cemail = email 
+        mydata.cquery = query  
 
-    
+        mydata.save( )
+
     return render(request,'demo/contact.html')
 
 def about(request):
