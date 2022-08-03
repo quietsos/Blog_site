@@ -1,4 +1,5 @@
 from gzip import READ
+import re
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -32,6 +33,17 @@ def home(request):
 
 def contact(request):
     # return HttpResponse("This is contact page!")
+
+    name = request.GET.get('name')
+    email = request.GET.get('email')
+    query = request.GET.get('comments')
+
+    # print(name)
+    # print(email)
+    # print(query)
+
+    print(f" name:{name} \n Email: {email} \n Query: {query} \n")
+
     
     return render(request,'demo/contact.html')
 
