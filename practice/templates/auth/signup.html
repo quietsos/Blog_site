@@ -4,6 +4,21 @@
 
 {% block content %}
 
-<h3> Hi this is sign up page</h3>
+    <div class="container col-md-5 offset=3 mt-5">
+        <form action="" method="POST" class="form-group">
+            {% csrf_token %}
+
+            <h3 class="text-center">Sign Up Form</h3><hr><br>
+
+            <input type="text" class="form-control" name="firstname" id="Firstname" placeholder="Enter your first name"><br>
+            <input type="text" class="form-control" name="lastname" id="Lastname" placeholder="Enter your last name"><br>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email"><br>
+            <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter your phone number"><br>
+            <input type="submit" class="btn btn-info form-control" value="Submit">
+
+
+        </form>
+
+    </div>
 
 {% endblock %}
