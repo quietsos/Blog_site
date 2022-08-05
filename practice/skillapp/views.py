@@ -8,11 +8,6 @@ from .models import MySkill
 from .models import Contactinfo
 
 
-
-
-
-
-
 def home(request):
 
     item = MySkill.objects.all()
@@ -29,7 +24,6 @@ def home(request):
     }
       
     return render(request,'index.html',context)
-
 
 
 def contact(request):
